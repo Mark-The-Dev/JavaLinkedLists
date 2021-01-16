@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Playlist {
     // Created program that implements a playlist of songs
 
     public static void main(String[] args) {
 
-        ArrayList<Album> albums = new ArrayList<>();
+        List<Album> albums = new ArrayList<>();
 
         Album album = new Album("Stormbringer", "Deep Purple");
         album.addSong("Stormbringer", 4.6);
@@ -32,7 +33,7 @@ public class Playlist {
         album.addSong("Night of the long knives", 5.12);
         albums.add(album);
 
-        LinkedList<Song> playList = new LinkedList<Song>();
+        List<Song> playList = new ArrayList<Song>();
         albums.get(0).addToPlayList("You can't do it right", playList);
         albums.get(0).addToPlayList("Holy man", playList);
         albums.get(0).addToPlayList("Speed king", playList);  // Does not exist

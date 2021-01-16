@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Album {
 
@@ -35,12 +36,13 @@ public class Album {
         return null;
     }
 
-    public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist){
+    public boolean addToPlayList(int trackNumber, List<Song> playlist){
         // return true if exists and was added via track number
         int idx = trackNumber - 1;
 
         if (( idx >= 0) && idx <= this.songs.size()){
             playlist.add(this.songs.get(idx));
+            System.out.println("Added " + this.songs.get(idx).getTitle() + " to playlist");
             return true;
         }
         System.out.println("Track not found");
@@ -48,11 +50,12 @@ public class Album {
 
     }
 
-    public boolean addToPlayList(String title, LinkedList<Song> playlist){
+    public boolean addToPlayList(String title, List<Song> playlist){
         // return true if exists and was added by name.
 
         if (findSong(title) != null){
             playlist.add(findSong(title));
+            System.out.println("Added " + findSong(title) + " to playlist");
             return true;
         }
         return false;
